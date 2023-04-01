@@ -1,12 +1,13 @@
 import pandas as pd
-from datetime import datetime
-import params
+import NonLiveBacktestingClass as bt
 
-buy_price = 100
-amount = 10
-trading_fee = 0.5
-trading_info_test = pd.DataFrame(columns=params.trading_info_columns)
-buy_info = pd.DataFrame([datetime.now(), 1, buy_price, amount, buy_price * amount, trading_fee], columns=params.trading_info_columns)
-trading_info_test = pd.concat([buy_info, trading_info_test], axis=1)
 
-print(trading_info_test)
+def main(argv):
+    btc_df = pd.read_csv('./btc_df.csv')
+    backtesting = bt.NonLiveBacktesting(btc_df)
+    backtesting.execute()
+
+
+if __name__ == '__main__':
+    import sys
+    main(sys.argv)

@@ -56,9 +56,3 @@ class NonLiveBacktesting:
 
         print('START BALANCE : ', params.set_init_balance)
         print('END BALANCE : CASH : {0} \t COIN_AMOUNT : {1} \t COIN_VALUE : {2}'.format(self.account.free_balance, self.account.coin_amount, self.account.coin_amount * coin_price))
-
-
-btc_df = pd.read_csv('./btc_df.csv')
-
-backtesting = NonLiveBacktesting(btc_df)
-backtesting.execute()
