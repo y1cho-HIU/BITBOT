@@ -1,11 +1,11 @@
 import pandas as pd
-import NonLiveBacktestingClass as bt
+import NonLiveAdvanced as nlbt
 
 
 def main(argv):
-    btc_df = pd.read_csv('./btc_df.csv')
-    backtesting = bt.NonLiveBacktesting(btc_df)
-    backtesting.execute()
+    xrp_df =pd.read_csv('./coin_data/xrp_5m_30d')
+    backtesting = nlbt.NonLiveBacktesting(xrp_df)
+    backtesting.execute(0.0005, 7)
 
 
 if __name__ == '__main__':
