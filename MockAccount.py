@@ -59,7 +59,7 @@ class MockAccount:
         elif pos == 'SHORT':
             self.position = pub.POS_SHORT
         self.buy_price = buy_price
-        print('POS_IN  : {0} \t PRICE : {1}'.format(pos, buy_price))
+        # print('POS_IN  : {0} \t PRICE : {1}'.format(pos, buy_price))
 
     def pos_out(self, sell_price):
         # long
@@ -72,7 +72,7 @@ class MockAccount:
                 self.win_count += 1
         self.trading_count += 1
         self.position = pub.POS_OUT
-        print('POS_OUT : \t PRICE : {0}'.format(sell_price))
+        # print('POS_OUT : \t PRICE : {0}'.format(sell_price))
 
     def display_historical_trading_info(self):
         print(self.trading_info)
